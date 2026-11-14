@@ -147,8 +147,14 @@ if(canvas&&host){try{
  const root=new THREE.Group();scene.add(root);
  const phone=new THREE.Group();
  phone.add(new THREE.Mesh(new THREE.BoxGeometry(1.3,2.5,.16),M(0x101c18,{metalness:.4})));
- const scr=new THREE.Mesh(new THREE.PlaneGeometry(1.14,2.3),M(0xdff3ea,{emissive:0x9fe0c6,emissiveIntensity:.3}));scr.position.z=.085;phone.add(scr);
- [[-.12,.7,.7,0x157a5f],[.12,.25,.6,0xf5b82e],[-.1,-.2,.75,0x157a5f],[.15,-.65,.5,0xf5b82e]].forEach(a=>{const b=new THREE.Mesh(new THREE.PlaneGeometry(a[2],.28),M(a[3]));b.position.set(a[0],a[1],.095);phone.add(b)});
+const cv=document.createElement("canvas");cv.width=456;cv.height=920;const g=cv.getContext("2d");
+g.fillStyle="#E9DFC9";g.fillRect(0,0,456,920);g.fillStyle="#0D5C46";g.fillRect(0,0,456,96);
+g.fillStyle="#fff";g.beginPath();g.arc(48,48,24,0,7);g.fill();g.font="700 26px sans-serif";g.fillText("Mbale Digital Sales",88,56);
+const bub=(x,y,w,h,c)=>{g.fillStyle=c;g.beginPath();g.roundRect(x,y,w,h,18);g.fill()};
+bub(24,130,260,70,"#fff");bub(172,220,260,90,"#9BD64B");bub(24,330,200,60,"#fff");bub(200,410,232,110,"#9BD64B");bub(24,540,300,70,"#fff");bub(150,630,282,70,"#9BD64B");bub(24,830,408,64,"#fff");
+g.fillStyle="#13241E";g.font="500 24px sans-serif";g.fillText("Is this still available?",40,175);g.fillText("Yes, order today",190,272);
+const tx=new THREE.CanvasTexture(cv);tx.colorSpace=THREE.SRGBColorSpace;
+const scr=new THREE.Mesh(new THREE.PlaneGeometry(1.14,2.3),new THREE.MeshBasicMaterial({map:tx}));scr.position.z=.085;phone.add(scr);
  phone.position.set(-2.2,-.7,.3);phone.scale.setScalar(.85);root.add(phone);
  const bag=new THREE.Group(),green=M(0x0c6a58),gold=M(0xd6a94f,{metalness:.25}),cream=M(0xf1efe3,{roughness:.5});
  bag.add(new THREE.Mesh(new THREE.BoxGeometry(1.38,1.42,.62),green));
