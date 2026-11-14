@@ -59,6 +59,8 @@ input[type=text]:focus,input[type=number]:focus,input[type=tel]:focus,textarea:f
 .opt input:focus-visible+span{outline:2px solid var(--brand);outline-offset:2px}
 .sub{display:inline-flex;align-items:center;min-height:44px;width:fit-content;padding:8px 16px;border:1px solid var(--brand);border-radius:9999px;background:transparent;color:var(--brand);font:600 16px/24px var(--font);text-decoration:none;cursor:pointer}
 .picture-preview{display:block;max-width:192px;max-height:192px;object-fit:cover;border-radius:12px;border:1px solid var(--border-primary)}
+.hero{background:var(--surface-hero) url(hero-bg.jpg) center/cover no-repeat;color:#F5F5F5;--h1-from:#FFFFFF;--h1-to:#9B9B9B;--text-secondary:#D0D0D0;--border-primary:#5A5A5A}
+.photo{display:none}
 .picture-status{font:400 14px/20px var(--font);color:var(--text-secondary);margin:0}
 .count{font:400 12px/16px var(--font);color:var(--text-secondary);text-align:right}
 .err{color:var(--error);font:600 14px/20px var(--font);margin:0}.err:empty{display:none}
